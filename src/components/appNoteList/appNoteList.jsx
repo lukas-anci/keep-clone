@@ -4,7 +4,7 @@ class AppNoteList extends Component {
   render() {
     return (
       <div className="app-note">
-        <h2>noteList component</h2>
+        <h2>app note</h2>
       </div>
     );
   }
