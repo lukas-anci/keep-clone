@@ -3,7 +3,7 @@ class AppAddNote extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="app-add">
         <h2>Add note component</h2>
       </div>
     );

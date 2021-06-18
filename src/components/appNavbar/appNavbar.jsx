@@ -3,9 +3,9 @@ class AppNavbar extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <header className="navbar">
         <h2>nav component</h2>
-      </div>
+      </header>
     );
   }
 }

@@ -1,3 +1,23 @@
 div {
   border: 1px solid #000;
 }
+
+.App {
+  display: grid;
+  grid-template-areas:
+    'navbar navbar navbar'
+    'aside app-note app-add';
+}
+
+.app-add {
+  grid-area: app-add;
+}
+.app-note {
+  grid-area: app-note;
+}
+.navbar {
+  grid-area: navbar;
+}
+.aside {
+  grid-area: aside;
+}
