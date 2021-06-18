@@ -5,6 +5,10 @@ class AppAside extends Component {
     return (
       <aside className="aside">
         <h2>this is aside</h2>
+        <myLink href="/" icon="fa fa-pencil">
+          Home
+        </myLink>
+        <i className="fa fa-pencil"></i>
       </aside>
     );
   }
