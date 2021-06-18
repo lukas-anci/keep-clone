@@ -12,6 +12,12 @@ class AppAddNote extends Component {
     event.preventDefault();
 
     this.props.onNewNote(this.state.newNote);
+    this.setState({
+      newNote: {
+        title: '',
+        body: '',
+      },
+    });
   };
 
   syncInput = (e) => {

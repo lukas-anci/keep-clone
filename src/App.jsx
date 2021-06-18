@@ -7,19 +7,29 @@ import './App.css';
 class App extends Component {
   state = {
     notes: [],
+    id: 1,
   };
 
   handleNewNote = (newNote) => {
     console.log('adding new note');
-    console.log(newNote);
+    const newNoteObj = this.createNewNote(newNote);
+    console.log(newNoteObj);
+
+    const notesCopy = [...this.state.notes, newNoteObj];
+
+    this.setState({ notes: notesCopy, id: this.state.id + 1 });
+    console.log(this.state.notes);
   };
+  createNewNote(newNote) {
+    return { _id: this.state.id, ...newNote, isPinned: false };
+  }
   render() {
     return (
       <div className="App">
         <AppNavbar />
         <AppAside />
         <AppAddNote onNewNote={this.handleNewNote} />
-        <AppNoteList />
+        <AppNoteList onNew={this.state.notes} />
       </div>
     );
   }
