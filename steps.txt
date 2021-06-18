@@ -1,1 +1,11 @@
 1. cleanup starter code
+
+2. create appNavbar, appAside, appAddNote, appNoteList
+
+3. importuoti i app.jsx ir pamatyti psl
+
+4. uzsideti visiems komponentams remeli ir su css grid susideti kaip keep
+
+5. Navbar jsx + css kad atrodytu panasiajei jame turim logo nuoroda, ivesties lauka ir viena ikona desineje
+
+6. Aside viduje kiekviena nuoroda yra _Link komponentas kuris gauna per props kokia ikona parodyti ir tarp pradzio ir pabaigos tabu koks turetu buti nuorodos tekstas
