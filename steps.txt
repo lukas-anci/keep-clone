@@ -18,3 +18,7 @@ yra patalpinami {_id, title, body, isPinned}
 
 7.3 pasidarom sutrauktos busenos ivesties lauka kuris buna kai mes neivedinejam
 naujo note.
+
+8.1 susikurti korteles komponenta
+
+8.2 sugeneruoti korteles is notes saraso notelist elemente

@@ -4,9 +4,11 @@
   min-width: 300px;
   border: 1px solid #b3b3b3;
   margin: 0.2em;
+  background-color: snow;
 }
 
 .cardRaised {
+  background-color: snow;
   padding: 0.8em;
   border-radius: 5px;
   min-width: 300px;
