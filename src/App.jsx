@@ -1,45 +1,56 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/appNavbar/appNavbar';
 import AppAside from './components/appAside/appAside';
-import AppNoteList from './components/appNoteList/appNoteList';
 import AppAddNote from './components/appAddNote/appAddNote';
-import Modal from './components/modal/modal';
-
+import AppNoteList from './components/appNoteList/appNoteList';
 import './App.css';
-
+import Modal from './components/modal/modal';
 class App extends Component {
   state = {
     notes: [],
-    id: 1,
-    showModal: true,
+    noteId: 1,
+    showModal: false,
+    selectedNote: {},
   };
 
   handleNewNote = (newNote) => {
-    console.log('adding new note');
+    // {_id, title, body, isPinned}
     const newNoteObj = this.createNewNote(newNote);
-    console.log(newNoteObj);
-
     const notesCopy = [...this.state.notes, newNoteObj];
-
-    this.setState({ notes: notesCopy, id: this.state.id + 1 });
-    console.log(this.state.notes);
+    this.setState({ notes: notesCopy, noteId: this.state.noteId + 1 });
   };
+
   createNewNote(newNote) {
-    return { _id: this.state.id, ...newNote, isPinned: false };
+    return { _id: this.state.noteId, ...newNote, isPinned: false };
   }
-  handleModal = () => {
-    console.log('modalb');
+
+  handleModal = (id) => {
+    if (id) {
+      console.log('id gavom');
+      const found = this.state.notes.find((n) => n._id === id);
+      this.setState({ selectedNote: found });
+    }
+
+    console.log('modal ??? id:', id);
     this.setState({ showModal: !this.state.showModal });
   };
 
   render() {
     return (
       <div className="App">
-        {this.state.showModal && <Modal onToggleModal={this.handleModal} />}
+        {this.state.showModal && (
+          <Modal
+            note={this.state.selectedNote}
+            onToggleModal={this.handleModal}
+          ></Modal>
+        )}
         <AppNavbar />
         <AppAside />
         <AppAddNote onNewNote={this.handleNewNote} />
-        <AppNoteList onNew={this.state.notes} />
+        <AppNoteList
+          onToggleModal={this.handleModal}
+          notes={this.state.notes}
+        />
       </div>
     );
   }

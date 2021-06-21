@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Card from './../common/card/card';
+
 import './style.css';
+
 class Modal extends Component {
   handleCardClick = (event) => {
-    // card wont be clicked if pressed
+    // kad paspaudimas ant korteles nereaguotu i paspaudima ant fono
     event.stopPropagation();
   };
 
@@ -11,8 +12,8 @@ class Modal extends Component {
     return (
       <div onClick={this.props.onToggleModal} className="main-modal">
         <div onClick={this.handleCardClick} className="modal-card">
-          <h3>Modal title</h3>
-          <p>Modal body</p>
+          <h3>{this.props.note.title}</h3>
+          <p>{this.props.note.body}</p>
         </div>
       </div>
     );

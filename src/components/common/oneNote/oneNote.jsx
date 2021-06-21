@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './style.css';
-import Card from './../card/card';
+import Card from '../card/card';
+
 class OneNote extends Component {
   state = {};
   render() {
-    console.log('oneNoteprops', this.props);
+    const { _id, title, body } = this.props.note;
     return (
-      <Card>
-        <h3>{this.props.title}</h3>
-        <p>{this.props.body}</p>
+      <Card onClick={() => this.props.onToggleModal(_id)}>
+        <h3>{title}</h3>
+        <p>{body}</p>
       </Card>
     );
   }
