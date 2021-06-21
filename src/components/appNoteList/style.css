@@ -1,0 +1,4 @@
+.app-note {
+  display: flex;
+  flex-wrap: wrap;
+}

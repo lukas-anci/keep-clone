@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OneNote from './../common/oneNote/oneNote';
+import './style.css';
 class AppNoteList extends Component {
   state = {};
   render() {
@@ -8,7 +9,6 @@ class AppNoteList extends Component {
         {this.props.onNew.map((n) => (
           <OneNote key={n._id} title={n.title} body={n.body} />
         ))}
-        <OneNote />
       </div>
     );
   }
